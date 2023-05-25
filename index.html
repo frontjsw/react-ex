@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O2UX 자체서비스</title>
+
+    <link rel="stylesheet" href="publishing_guide/asset/css/reset.css">
+
+    <script src="publishing_guide/asset/js/jquery-3.6.0.min.js"></script>
+    <script src="publishing_guide/asset/js/jquery-ui-1.12.1.min.js"></script>
+
+
+</head>
+
+<body>
+    <div class="framework">
+        <div class="header">
+            <div class="info_wrap">
+                <div class="info title">신한 내부 과제</div>
+                <div class="info version">v 0.2</div>
+                <div class="info date">2023-05-09</div>
+            </div>
+            <div class="app_wrap">
+                <div class="app active" title="O2UX 자체서비스">
+                    <a href="publishing_guide/index.html" target="frameViewer">
+                        <span class="app_title">신한 내부 과제</span>
+                        <div class="active_bar"></div>
+                    </a>
+                </div>
+
+                <div class="app" title="UI Component">
+                    <a href="publishing_guide/index_common.html" target="frameViewer">
+                        <span class="app_title">UI Component</span>
+                        <div class="active_bar"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="viewer">
+            <iframe src="publishing_guide/index.html" name="frameViewer" id="frameViewer" title="frameViewer"
+                frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <style>
+        /*------------------------------------------------------------------------------
+    framework
+    -------------------------------------------------------------------------------*/
+        .framework {
+            overflow: hidden;
+            overflow-x: auto;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .framework .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            font-size: 16px;
+            color: #ffffff;
+            background: #262626;
+        }
+
+        .framework .header:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .framework .viewer {
+            width: 100%;
+            height: 100%;
+            _padding-top: 70px;
+            box-sizing: border-box;
+        }
+
+        .framework .viewer iframe {
+            width: 100%;
+            height: calc(100% - 1px);
+        }
+
+
+        /*
+    framework - header
+*/
+        .header .info_wrap {
+            float: left;
+            overflow: hidden;
+            padding: 20px 0 20px 20px;
+            box-sizing: border-box;
+        }
+
+        .header .info_wrap .logo {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .header .info_wrap .logo img {
+            width: 100%;
+        }
+
+        .header .info_wrap .info {
+            display: inline-block;
+            position: relative;
+            vertical-align: bottom;
+        }
+
+        .header .info_wrap .info~.info:before {
+            content: '';
+            position: relative;
+            display: inline-block;
+            position: relative;
+            top: 2px;
+            width: 1px;
+            height: 14px;
+            margin: 0 17px 0 13px;
+            background: rgba(255, 255, 255, .3);
+        }
+
+        .header .info_wrap .info.title+.info:before {
+            display: none;
+        }
+
+        .header .info_wrap .info.title {
+            padding-left: 14px;
+        }
+
+        .header .info_wrap .info.version {
+            padding-left: 10px;
+        }
+
+
+        /*
+    framework - header - navigation
+*/
+        .header .app_wrap {
+            float: right;
+            box-sizing: border-box;
+        }
+
+        .header .app_wrap .app {
+            display: inline-table;
+            position: relative;
+            padding: 0 30px;
+            box-sizing: border-box;
+            vertical-align: middle;
+            height: 60px;
+            cursor: pointer;
+        }
+
+        .header .app_wrap .app a {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .header .app_wrap .app .app_title {
+            opacity: .4;
+            z-index: 200;
+            position: relative;
+            display: block;
+            width: 100%;
+            _height: 100%;
+            color: #ffffff;
+            box-sizing: border-box;
+        }
+
+        .header .app_wrap .app .active_bar {
+            z-index: 100;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 0;
+            height: 1px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .header .app_wrap .app .active_bar {
+            transition: 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .header .app_wrap .app.active .active_bar {
+            width: 100%;
+        }
+
+        .header .app_wrap .app.active .active_bar:before {
+            z-index: 100;
+            content: '';
+            display: block;
+            width: 100%;
+            height: 10px;
+            background: #000;
+        }
+
+        .header .app_wrap .app .app_title:hover,
+        .header .app_wrap .app.active .app_title {
+            opacity: 1;
+        }
+
+
+
+        /*------------------------------------------------------------------------------
+    모바일
+-------------------------------------------------------------------------------*/
+        .framework.mobile .header .info_wrap {
+            padding: 12px 10px 5px;
+            font-size: 13px;
+        }
+
+        .framework.mobile .header .info_wrap .info.title {
+            padding-left: 5px;
+        }
+
+        .framework.mobile .header .info_wrap .info.version {
+            padding-left: 5px;
+        }
+
+        .framework.mobile .header .info_wrap .info~.info:before {
+            height: 11px;
+            margin: 0 7px 0 5px;
+        }
+
+        .framework.mobile .header .app_wrap {
+            clear: right;
+            width: 100%;
+            text-align: left;
+        }
+
+        .framework.mobile .header .app_wrap .app {
+            height: 35px;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+
+        .framework.mobile .header .app_wrap .app .active_bar {
+            padding: 0 5px;
+        }
+
+        .framework.mobile .header .app_wrap .app.active .active_bar:before {
+            height: 10px;
+        }
+    </style>
+
+    <script>
+        /*----------------------------------------
+            window load
+        ----------------------------------------*/
+        /* document */
+        $(document).ready(function () {
+        });
+
+        /* window */
+        $(window).on('load', function () {
+            layout();
+        });
+
+        $(window).on('resize', function () {
+            layout();
+        });
+
+        var layout = function () {
+            var layout = $('.framework');
+            var header = layout.find('.header');
+            var viewer = layout.find('.viewer');
+
+            var winW = $(window).outerWidth();
+
+            if (winW < 1300) {
+                layout.addClass('mobile');
+            } else {
+                layout.removeClass('mobile');
+            };
+
+            var headerH = header.outerHeight();
+
+            viewer.css({ 'padding-top': headerH });
+
+        };
+
+        $(document).on('click', '.app_wrap .app', function () {
+            var url = $(this).children('a').attr('href');
+            var target = $(this).children('a').attr('target');
+            if (target == '_self') {
+                location.href = url;
+            } else {
+                $('.viewer iframe').attr('src', url);
+                $(this).addClass('active').siblings().removeClass('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

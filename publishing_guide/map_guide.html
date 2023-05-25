@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0" />
+        <meta name="format-detection" content="telephone=no, address=no, email=no" />
+        <link rel="stylesheet" href="asset/css/map.css" />
+        <title>PC Template Guide</title>
+
+        <style>
+            h2 {
+                padding-left: 1rem;
+                font-size: 18px;
+                font-weight: 600;
+            }
+            article {
+                border-bottom: 2px solid #333;
+                padding-bottom: 20px;
+            }
+
+            p {
+                white-space: pre-line;
+                padding-left: 2rem;
+            }
+            li {
+                white-space: pre-line;
+            }
+
+            .hstr_list {
+                /* display: flex;
+                flex-direction: column; */
+            }
+            .hstr_list li {
+                padding-right: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: #000;
+                font-weight: 400;
+                font-size: 14px;
+                word-break: keep-all;
+                white-space: initial;
+            }
+            .hstr_list li ~ li {
+                margin-top: 20px;
+            }
+
+            .guide_infobox article ~ article {
+                margin-top: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="margin-left: 20px" id="layout">
+            <h1 class="example_title">Mobile 인덱스 페이지 Sample</h1>
+            <br />
+            * 새창버튼 색의 의미<br /><br />
+            <span style="display: inline-block; margin-top: 5px; margin-right: 5px; width: 40px; height: 18px; line-height: 18px; border-radius: 3px; background: #dddddd; vertical-align: middle; text-align: center; font-size: 10px">새창</span><span style="display: inline-block; margin-top: 5px; line-height: 18px; vertical-align: middle"> : 작업중(전)</span><br />
+            <span style="display: inline-block; margin-top: 5px; margin-right: 5px; width: 40px; height: 18px; line-height: 18px; border-radius: 3px; background: #ff8d8d; vertical-align: middle; text-align: center; font-size: 10px">새창</span><span style="display: inline-block; margin-top: 5px; line-height: 18px; vertical-align: middle"> : 검수요청</span><br />
+            <span style="display: inline-block; margin-top: 5px; margin-right: 5px; width: 40px; height: 18px; line-height: 18px; border-radius: 3px; background: #ffd800; vertical-align: middle; text-align: center; font-size: 10px">새창</span><span style="display: inline-block; margin-top: 5px; line-height: 18px; vertical-align: middle"> : 보류</span><br />
+            <span style="display: inline-block; margin-top: 5px; margin-right: 5px; width: 40px; height: 18px; line-height: 18px; border-radius: 3px; background: #82d1ff; vertical-align: middle; text-align: center; font-size: 10px">새창</span><span style="display: inline-block; margin-top: 5px; line-height: 18px; vertical-align: middle"> : 배포</span><br />
+            <span style="display: inline-block; margin-top: 5px; margin-right: 5px; width: 40px; height: 18px; line-height: 18px; border-radius: 3px; background: #60ec72; vertical-align: middle; text-align: center; font-size: 10px">새창</span><span style="display: inline-block; margin-top: 5px; line-height: 18px; vertical-align: middle"> : 접근성 검수 완료</span><br /><br />
+            --------------------------------------------------------
+            <h3 class="cate_info">* History 분류 카테고리 코드 리스트<br />(분류 코드 마우스 hover 시 의미 출력)</h3>
+            <h3 class="cate_title cate_edit">Edit</h3>
+            <ul class="guide_cate guide_edit">
+                <li class="list">
+                    <span class="cate_tit">ETT : </span>
+                    <span class="cate_txt">텍스트 수정 (Edit Text)</span>
+                </li>
+                <li class="list">
+                    <span class="cate_tit">ECLA : </span>
+                    <span class="cate_txt">클래스 수정 (Edit Class)</span>
+                </li>
+                <li class="list">
+                    <span class="cate_tit">ELAY : </span>
+                    <span class="cate_txt">구조 수정 (Edit Layout)</span>
+                </li>
+                <li class="list">
+                    <span class="cate_tit">EIMG : </span>
+                    <span class="cate_txt">이미지 수정 (Edit Img)</span>
+                </li>
+                <li class="list">
+                    <span class="cate_tit">EJS : </span>
+                    <span class="cate_txt">스크립트 수정 (Edit Script)</span>
+                </li>
+                <li class="list">
+                    <span class="cate_tit">EBUG : </span>
+                    <span class="cate_txt">버그 수정 (Edit Bug)</span>
+                </li>
+            </ul>
+            <h3 class="cate_title cate_add">Add</h3>
+            <ul class="guide_cate guide_add">
+                <li class="list">
+                    <span class="cate_tit">ATT : </span>
+                    <span class="cate_txt">텍스트 추가 (Add Text)</span>
+                </li>
+                <li class="list">
+                    <span class="cate_tit">ACLA : </span>
+                    <span class="cate_txt">클래스 추가 (Add Class)</span>
+                </li>
+                <li class="list">
+                    <span class="cate_tit">ALAY : </span>
+                    <span class="cate_txt">구조 추가 (Add Layout)</span>
+                </li>
+                <li class="list">
+                    <span class="cate_tit">AIMG : </span>
+                    <span class="cate_txt">이미지 추가 (Add Img)</span>
+                </li>
+                <li class="list">
+                    <span class="cate_tit">AJS : </span>
+                    <span class="cate_txt">스크립트 추가 (Add Script)</span>
+                </li>
+                <li class="list">
+                    <span class="cate_tit">ATET : </span>
+                    <span class="cate_txt">테스트 코드 추가 (Add TestCode)</span>
+                </li>
+            </ul>
+            <h3 class="cate_title cate_delete">Delete</h3>
+            <ul class="guide_cate guide_delete">
+                <li class="list">
+                    <span class="cate_tit">DTT : </span>
+                    <span class="cate_txt">텍스트 삭제 (Delete Text)</span>
+                </li>
+                <li class="list">
+                    <span class="cate_tit">DCLA : </span>
+                    <span class="cate_txt">클래스 삭제 (Delete Class)</span>
+                </li>
+                <li class="list">
+                    <span class="cate_tit">DLAY : </span>
+                    <span class="cate_txt">구조 삭제 (Delete Layout)</span>
+                </li>
+                <li class="list">
+                    <span class="cate_tit">DIMG : </span>
+                    <span class="cate_txt">이미지 삭제 (Delete Img)</span>
+                </li>
+                <li class="list">
+                    <span class="cate_tit">DJS : </span>
+                    <span class="cate_txt">스크립트 삭제 (Delete Script)</span>
+                </li>
+                <li class="list">
+                    <span class="cate_tit">DTET : </span>
+                    <span class="cate_txt">테스트 코드 삭제 (Delete TestCode)</span>
+                </li>
+            </ul>
+            <h3 class="cate_title cate_renewal">Renewal</h3>
+            <ul class="guide_cate guide_renewal">
+                <li class="list">
+                    <span class="cate_tit">RNEW : </span>
+                    <span class="cate_txt">페이지 전체 수정 (Renewal)</span>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

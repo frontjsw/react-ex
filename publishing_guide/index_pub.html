@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <!-- 모바일 확대제어 메타코드 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+        <title>Mobile Index Sample</title>
+        <script>
+            // frameSet 모바일 화면 제어 js 코드
+            window.onload = function () {
+                const frameSet = document.querySelector('frameset');
+                // 페이지 접속 시 스크린 width 확인 하여 변경 코드
+                if (matchMedia('screen and (max-width: 768px)').matches) {
+                    //화면 크기가 768px이하일때
+                    frameSet.cols = '0,*';
+                }
+                // 페이지 resize 시 스크린 width 확인 하여 변경 코드
+                window.addEventListener('resize', function () {
+                    if (matchMedia('screen and (max-width: 768px)').matches) {
+                        //화면 크기가 768px이하일때
+                        frameSet.cols = '0,*';
+                    } else if (matchMedia('screen and (min-width: 769px)').matches) {
+                        //화면 크기가 769px 이상일때
+                        frameSet.cols = '375,*';
+                    }
+                });
+            };
+        </script>
+    </head>
+
+    <frameset cols="375,*">
+        <frame src="map_guide.html" name="mainFrame" id="mainFrame" title="mainFrame" class="frame1" />
+        <frame src="map_pub.html" name="leftFrame" id="leftFrame" title="leftFrame" class="frame2" />
+    </frameset>
+    <noframes></noframes>
+</html>
